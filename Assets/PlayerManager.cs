@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject GameOver;
+
     [Header("Movement Settings")]    
     
     //Hãy sửa lại dòng nãy hợp lý, mỗi thành viên sẽ thay phiên nhau dùng int hoặc float. 
@@ -95,10 +97,12 @@ public class PlayerManager : MonoBehaviour
         if (collision.CompareTag("Enemy") || collision.CompareTag("Trap"))
         {
             health--;
+            Debug.Log(health);
 
             if (health <= 0)
             {
                 Debug.Log("Game Over!");
+                GameOver.SetActive(true);
                 Destroy(gameObject);
             }
         }
