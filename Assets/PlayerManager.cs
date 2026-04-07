@@ -99,6 +99,7 @@ public class PlayerManager : MonoBehaviour
             if (health <= 0)
             {
                 Debug.Log("Game Over!");
+                Destroy(gameObject);
             }
         }
     }
